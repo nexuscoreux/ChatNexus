@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -1473,9 +1474,8 @@
                         <div class="welcome-sub">Chat · Image Generation · Groq Powered</div>
                         <p class="welcome-desc">Advanced AI — No topic limits, no cost. Chat or generate images.</p>
                         <div class="knowledge-badge">
-                            <span class="knowledge-badge-warn">⚠</span>
-                            knowledge up to <em>december 2023</em> — probably don't ask about anything after dec 2023
-                        </div>
+                            <span class="knowledge-badge-warn">✦</span>
+                            powered by <em>Groq Compound</em> — pulls live web results for current events</div>
                         <div class="suggestion-chips">
                             <div class="chip" onclick="sendSuggestion(this.textContent)">Explain quantum entanglement
                             </div>
@@ -1507,9 +1507,9 @@
                         </button>
                     </div>
                     <div class="footer-meta">
-                        <div class="input-hint" id="footerHint">NEXUS AI &nbsp;·&nbsp; Groq Free Tier · llama-3.3-70b
+                        <div class="input-hint" id="footerHint">NEXUS AI &nbsp;·&nbsp; Groq Free Tier · compound (live web)
                             &nbsp;·&nbsp; Enter to send · Shift+Enter for new line</div>
-                        <div class="cutoff-notice">⚠ <span>knowledge up to december 2023</span></div>
+                        <div class="cutoff-notice">✦ <span>real-time web access enabled</span></div>
                     </div>
                 </footer>
             </div>
@@ -1561,7 +1561,7 @@
                 sendBtn.classList.remove('img-mode');
                 imgModeBanner.classList.remove('visible');
                 input.placeholder = 'Ask Nexus anything...';
-                footerHint.textContent = 'NEXUS AI · Groq Free Tier · llama-3.3-70b · Enter to send · Shift+Enter for new line';
+                footerHint.textContent = 'NEXUS AI · Groq Free Tier · compound (live web) · Enter to send · Shift+Enter for new line';
             }
             input.focus();
         }
@@ -1630,8 +1630,8 @@
       <div class="welcome-sub">Chat · Image Generation · Groq Powered</div>
       <p class="welcome-desc">Advanced AI — No topic limits, no cost. Chat or generate images.</p>
       <div class="knowledge-badge">
-        <span class="knowledge-badge-warn">⚠</span>
-        knowledge up to <em>december 2023</em> — probably don't ask about anything after dec 2023
+        <span class="knowledge-badge-warn">✦</span>
+        powered by <em>Groq Compound</em> — pulls live web results for current events
       </div>
       <div class="suggestion-chips">
         <div class="chip" onclick="sendSuggestion(this.textContent)">Explain quantum entanglement</div>
@@ -1903,7 +1903,7 @@
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${groqKey}` },
                 body: JSON.stringify({
-                    model: 'llama-3.3-70b-versatile',
+                    model: 'openai/gpt-oss-120b',
                     max_tokens: 300,
                     messages: [
                         {
@@ -2017,7 +2017,7 @@ Rules:
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${groqKey}` },
                     body: JSON.stringify({
-                        model: 'llama-3.3-70b-versatile',
+                        model: 'groq/compound',
                         max_tokens: 2048,
                         messages: [
                             {
